@@ -1,43 +1,50 @@
 import axios from "axios";
 
-export const account = (baseUrl: string, projectId: string, projectKey: string) => ({
-  createAccount: async (username: string, email: string, password: string) => {
+export class AccountService {
+  constructor(
+    private baseUrl: string,
+    private projectId: string,
+    private projectKey: string
+  ) {}
+
+  private get headers() {
+    return {
+      "project-id": this.projectId,
+      "project-key": this.projectKey,
+    };
+  }
+
+  async createAccount(username: string, email: string, password: string) {
     const response = await axios.post(
-      `${baseUrl}/user/create`,
+      `${this.baseUrl}/user/create`,
       { username, email, password },
-      {
-        headers: { "project-id": projectId, "project-key": projectKey },
-        withCredentials: true,
-      }
+      { headers: this.headers, withCredentials: true }
     );
     return response.data;
-  },
+  }
 
-  deleteAccount: async () => {
-    const response = await axios.delete(`${baseUrl}/user/delete`, {
-      headers: { "project-id": projectId, "project-key": projectKey },
+  async deleteAccount() {
+    const response = await axios.delete(`${this.baseUrl}/user/delete`, {
+      headers: this.headers,
       withCredentials: true,
     });
     return response.data;
-  },
+  }
 
-  updateAccount: async (username: string, email: string) => {
+  async updateAccount(username: string, email: string) {
     const response = await axios.put(
-      `${baseUrl}/user/update`,
+      `${this.baseUrl}/user/update`,
       { username, email },
-      {
-        headers: { "project-id": projectId, "project-key": projectKey },
-        withCredentials: true,
-      }
+      { headers: this.headers, withCredentials: true }
     );
     return response.data;
-  },
+  }
 
-  getCurrentUser: async () => {
-    const response = await axios.get(`${baseUrl}/user/`, {
-      headers: { "project-id": projectId, "project-key": projectKey },
+  async getCurrentUser() {
+    const response = await axios.get(`${this.baseUrl}/user/`, {
+      headers: this.headers,
       withCredentials: true,
     });
     return response.data;
-  },
-});
+  }
+}
