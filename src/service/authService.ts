@@ -39,7 +39,7 @@ export class AuthService {
     return response.data;
   }
 
-  // 🔹 GET CURRENT USER
+  //🔹 GET CURRENT USER
   async getCurrentUser() {
     const response = await axios.get(
       `${this.baseUrl}/auth/me`,
