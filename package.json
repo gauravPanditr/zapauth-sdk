@@ -4,7 +4,7 @@
   "description": "A lightweight SDK providing authentication services integration for web applications",
   "main": "dist/index.js",
    "types": "dist/index.d.ts",
-  "files": ["dist/"],
+  "files": ["dist", "README.md", "LICENSE"],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
