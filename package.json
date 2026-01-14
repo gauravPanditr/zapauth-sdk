@@ -1,10 +1,14 @@
 {
   "name": "zap-auth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight SDK providing authentication services integration for web applications",
   "main": "dist/index.js",
-   "types": "dist/index.d.ts",
-  "files": ["dist", "README.md", "LICENSE"],
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
@@ -22,7 +26,6 @@
   ],
   "author": "Gaurav Pandit",
   "license": "MIT",
-  
   "bugs": {
     "url": "https://github.com/gauravPanditr/zapauth-sdk/issues"
   },
