@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AUTHWAVE_API_BASE_URL } from "../constant";
+import { ZAP_API_BASE_URL } from "../constant";
 
 export class AuthService {
   private projectId: string;
@@ -9,7 +9,7 @@ export class AuthService {
   constructor(projectId: string, projectKey: string) {
     this.projectId = projectId;
     this.projectKey = projectKey;
-    this.baseUrl = AUTHWAVE_API_BASE_URL;
+    this.baseUrl = ZAP_API_BASE_URL;
   }
 
   private get headers() {
