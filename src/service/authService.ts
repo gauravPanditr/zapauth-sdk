@@ -38,6 +38,17 @@ export class AuthService {
     );
     return response.data;
   }
+ 
+  //Refresh Token
+   async refreshAccessToken() {
+    const response = await axios.post(
+      `${this.baseUrl}/auth/refresh`,
+      
+      { headers: this.headers, withCredentials: true }
+    );
+    return response.data;
+  }
+
 
   //🔹 GET CURRENT USER
   async getCurrentUser() {
