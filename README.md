@@ -1,1 +1,1 @@
-zap-auth sdk
+An intuitive library designed to simplify the integration of authentication services into web applications.
