@@ -58,4 +58,24 @@ export class AuthService {
     );
     return response.data;
   }
+  //Delete Account
+  async deleteAccount(){
+      const response = await axios.delete(
+      `${this.baseUrl}/auth/delete`,
+      { headers: this.headers, withCredentials: true }
+    );
+    return response.data;
+  }
+ // logout User
+  async  logout(){
+      const response = await axios.delete(
+      `${this.baseUrl}/auth/session/delete`,
+      { headers: this.headers, withCredentials: true }
+    );
+    return response.data;
+  }
+  
+
+
+
 }
